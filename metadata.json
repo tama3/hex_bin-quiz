@@ -1,0 +1,5 @@
+{
+  "name": "進数変換クイズ (Hex/Bin Quiz)",
+  "description": "16進数と2進数の間で数値を変換する練習ができるクイズアプリです。UIは日本語です。",
+  "requestFramePermissions": []
+}
