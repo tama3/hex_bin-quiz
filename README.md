@@ -1,14 +1,48 @@
-# Run and deploy your AI Studio app
+# 進数変換クイズ (Hex/Bin Quiz)
 
-This contains everything you need to run your app locally.
+16進数と2進数の間で数値を変換する練習ができるクイズアプリです。
 
-## Run Locally
+- **Vite + React製**
+- **多言語対応**（日本語・英語・中国語・韓国語）
+- シンプルなUIで、16進数⇔2進数の変換力を楽しく鍛えられます
 
-**Prerequisites:**  Node.js
+## デモ
+Vercel等で公開予定
 
+## 主な機能
+- 16進数→2進数、2進数→16進数のクイズ出題
+- 正解・不正解のフィードバック
+- スコア・正解率表示
+- 言語切替（日本語・英語・中国語・韓国語）
+- レスポンシブデザイン
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 使い方
+
+### ローカルで実行
+
+**前提:** Node.jsがインストールされていること
+
+1. 依存パッケージのインストール
+   ```bash
+   npm install
+   ```
+2. 開発サーバの起動
+   ```bash
+   npm run dev
+   ```
+3. ブラウザで `http://localhost:5173` などにアクセス
+
+### 本番ビルド
+
+```bash
+npm run build
+```
+生成された `dist/` フォルダを静的ホスティングサービス（Vercel, Netlify等）で公開できます。
+
+## デプロイ（Vercel例）
+1. GitHubにリポジトリを作成し、コードをpush
+2. [Vercel](https://vercel.com/) でGitHubリポジトリをインポート
+3. デフォルト設定で「Deploy」
+
+## ライセンス
+MIT
