@@ -125,4 +125,20 @@ describe('LanguageContext', () => {
 
     expect(screen.getByTestId('locale')).toHaveTextContent('ja');
   });
+
+  it('detects Thai browser language', () => {
+    localStorageMock.getItem.mockReturnValue(null);
+    Object.defineProperty(navigator, 'language', {
+      value: 'th-TH',
+      writable: true,
+    });
+    
+    render(
+      <LanguageProvider>
+        <TestComponent />
+      </LanguageProvider>
+    );
+
+    expect(screen.getByTestId('locale')).toHaveTextContent('th');
+  });
 }); 

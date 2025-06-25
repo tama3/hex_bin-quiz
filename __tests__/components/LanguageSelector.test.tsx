@@ -48,6 +48,7 @@ describe('LanguageSelector', () => {
     expect(screen.getByText('English')).toBeInTheDocument();
     expect(screen.getByText('简体中文')).toBeInTheDocument();
     expect(screen.getByText('한국어')).toBeInTheDocument();
+    expect(screen.getByText('ไทย')).toBeInTheDocument();
   });
 
   it('calls setLocale when language is changed', () => {

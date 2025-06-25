@@ -1,4 +1,4 @@
-export type Locale = 'ja' | 'en' | 'zh-CN' | 'ko';
+export type Locale = 'ja' | 'en' | 'zh-CN' | 'ko' | 'th';
 
 export interface TranslationSet {
   appName: string;
@@ -130,6 +130,32 @@ export const translations: Record<Locale, TranslationSet> = {
     nextQuestionButtonAria: '다음 문제 (N키로도 가능)',
     footerText: (year) => `© ${year} 진수 변환 퀴즈`,
     answerInputAria: '답변 입력 필드',
+    languageSelectorLabel: 'Language:',
+  },
+  th: {
+    appName: 'แบบทดสอบระบบเลขฐาน',
+    appSubtitle: 'ฝึกฝนการแปลงเลขฐานสิบหกและเลขฐานสอง!',
+    modeHexToBin: 'ฐานสิบหก → ฐานสอง',
+    modeBinToHex: 'ฐานสอง → ฐานสิบหก',
+    scoreTitle: 'คะแนน',
+    accuracy: 'ความแม่นยำ',
+    questionPrompt: (questionType, targetType) => `แปลง${questionType}ต่อไปนี้เป็น${targetType}:`,
+    questionTypeHex: 'เลขฐานสิบหก',
+    questionTypeBin: 'เลขฐานสอง',
+    targetTypeHex: 'เลขฐานสิบหก 2 หลัก',
+    targetTypeBin: 'เลขฐานสอง 8 หลัก',
+    questionLoading: 'กำลังโหลดคำถาม...',
+    answerPlaceholderHexToBin: 'เช่น: 0101 1010',
+    answerPlaceholderBinToHex: 'เช่น: 5A',
+    submitButton: 'ยืนยัน',
+    feedbackCorrect: 'ถูกต้อง! ยอดเยี่ยม!',
+    feedbackIncorrect: (correctAnswer) => `ไม่ถูกต้อง คำตอบที่ถูกต้องคือ: ${correctAnswer}`,
+    feedbackInvalidFormat: (format) => `ข้อมูลไม่ถูกต้อง กรุณาใส่${format}`,
+    feedbackEmptyInput: 'กรุณาใส่คำตอบ',
+    nextQuestionButton: 'คำถามถัดไป',
+    nextQuestionButtonAria: 'คำถามถัดไป (กด N ก็ได้)',
+    footerText: (year) => `© ${year} แบบทดสอบระบบเลขฐาน`,
+    answerInputAria: 'ช่องใส่คำตอบ',
     languageSelectorLabel: 'Language:',
   },
 };

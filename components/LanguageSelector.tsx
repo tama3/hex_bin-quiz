@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Locale } from '../locales';
@@ -11,6 +10,7 @@ const LanguageSelector: React.FC = () => {
     { code: 'en', name: 'English' },
     { code: 'zh-CN', name: '简体中文' },
     { code: 'ko', name: '한국어' },
+    { code: 'th', name: 'ไทย' },
   ];
 
   return (

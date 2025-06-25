@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { translations, Locale } from '../../locales';
 
 describe('translations', () => {
-  const locales: Locale[] = ['ja', 'en', 'zh-CN', 'ko'];
+  const locales: Locale[] = ['ja', 'en', 'zh-CN', 'ko', 'th'];
 
   it('should have all required locales', () => {
     locales.forEach(locale => {
@@ -80,6 +80,7 @@ describe('translations', () => {
     expect(translations.en.appName).toBe('Numeral System Quiz');
     expect(translations['zh-CN'].appName).toBe('进制转换测验');
     expect(translations.ko.appName).toBe('진수 변환 퀴즈');
+    expect(translations.th.appName).toBe('แบบทดสอบระบบเลขฐาน');
   });
 
   it('should have valid mode labels', () => {

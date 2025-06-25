@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useEffect, useContext, useCallback, ReactNode } from 'react';
 import { translations, Locale, TranslationSet } from '../locales';
 
@@ -21,13 +20,14 @@ const getInitialLocale = (): Locale => {
   if (browserLang.startsWith('en') && translations.en) return 'en';
   if ((browserLang.startsWith('zh-cn') || browserLang === 'zh') && translations['zh-CN']) return 'zh-CN';
   if (browserLang.startsWith('ko') && translations.ko) return 'ko';
+  if (browserLang.startsWith('th') && translations.th) return 'th';
   
   return 'ja'; // Default to Japanese
 };
 
 // Type guard to check if a string is a valid Locale
 const isValidLocale = (value: string): value is Locale => {
-  return ['ja', 'en', 'zh-CN', 'ko'].includes(value);
+  return value === 'ja' || value === 'en' || value === 'zh-CN' || value === 'ko' || value === 'th';
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -42,8 +42,8 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   }, [locale]);
 
   const setLocale = (localeValue: string) => { // Parameter changed to string
-    if (isValidLocale(localeValue) && translations[localeValue]) { // Validate and check existence
-      setLocaleState(localeValue); // localeValue is now confirmed as Locale
+    if (isValidLocale(localeValue) && translations[localeValue as Locale]) { // Validate and check existence
+      setLocaleState(localeValue as Locale); // Use type assertion after validation
     } else {
       console.warn(`Attempted to set invalid locale: ${localeValue}`);
     }
